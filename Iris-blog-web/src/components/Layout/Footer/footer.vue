@@ -5,10 +5,10 @@
 		class="footer_box flex flex-col items-center justify-center"
 	>
 		<!-- eslint-disable-next-line -->
-		<div class="footer-color">&copy 鸢尾的博客 2022</div>
+		<div class="footer-color">&copy {{blog.blogInfo.siteName}} 2022</div>
 		<a class="footer-color change-color" href="http://beian.miit.gov.cn/" target="_blank">
 			<img src="https://admin.lstar.icu:9090/file/image/20240930/beian.png" alt="备案图标" class="beian-icon">
-			蜀ICP备2023007772号
+			{{blog.blogInfo.recordNumber}}
 		</a>
 		<div class="footer-color" v-for="(item, index) in webInfo" :key="index">
 			<div class="web-name">{{ item.name }} {{ item.count }}</div>
