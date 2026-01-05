@@ -9,14 +9,21 @@
 	</div>
 	<!-- 弹幕列表 -->
 	<div class="danmaku-container">
-		<vue-danmaku ref="danmaku" class="danmaku" use-slot v-model:danmus="messageList" :is-suspend="true">
-			<template v-slot:dm="{ danmu }">
-        <span class="danmaku-item">
-          <img :src="danmu.avatar" width="30" height="30" style="border-radius: 50%"/>
-          <span class="ml">{{ danmu.nickname }} :</span>
-          <span class="ml">{{ danmu.content }}</span>
-        </span>
-			</template>
+		<vue-danmaku
+			ref="danmaku"
+			class="danmaku"
+			use-slot
+			v-model:danmus="messageList"
+			:is-suspend="true"
+			:loop="true"
+		>
+		<template v-slot:dm="{ danmu }">
+      <span class="danmaku-item">
+        <img :src="danmu.avatar" width="30" height="30" style="border-radius: 50%" />
+        <span class="ml">{{ danmu.nickname }} :</span>
+        <span class="ml">{{ danmu.content }}</span>
+      </span>
+		</template>
 		</vue-danmaku>
 	</div>
 </template>
